@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Brothers Pipeworks | New York NY | Premium Plumbing Engineering</title>
+
+    <!-- Favicon - Browser Tab Icon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284C7'/><text y='72' x='50' text-anchor='middle' font-size='62'>🔧</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284C7'/><text y='72' x='50' text-anchor='middle' font-size='62'>🔧</text></svg>">
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 1. DESIGN SYSTEM & ROOT TOKENS */
+        :root {
+            --ny-dark: #0A0F1D;        /* Sleek Deep Charcoal Black */
+            --ny-blue: #0284C7;        /* Crisp Premium Blue */
+            --ny-amber: #F59E0B;       /* Luxury Gold/Amber Accent */
+            --ny-light: #F8FAFC;       /* Off-White Clean Background */
+            --gradient-primary: linear-gradient(135deg, #0A0F1D 0%, #1E293B 100%);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 40px -15px rgba(10, 15, 29, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .logo-text, .price-tag { font-family: 'Space Grotesk', sans-serif; }
+        body { background-color: #FFF; color: #334155; scroll-behavior: smooth; overflow-x: hidden; }
+
+        /* 2. TOP VIP INFO BAR */
+        .top-vip-bar { background: #000; color: #94A3B8; padding: 12px 6%; display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; border-bottom: 1px solid #1E293B; }
+        /* SOCIAL LINKS */
+        .social-links { display: flex; gap: 10px; align-items: center; }
+        .social-links a { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: 0.3s; text-decoration: none; }
+        .social-fb   { background: #1877F2; color: white; }
+        .social-ig   { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: white; }
+        .social-yelp { background: #D32323; color: white; }
+        .social-goog { background: #4285F4; color: white; }
+        .social-li   { background: #0A66C2; color: white; }
+        .social-links a:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); opacity: 0.9; }
+
+        .top-vip-bar a { color: #FFF; text-decoration: none; transition: 0.3s; }
+        .top-vip-bar a:hover { color: var(--ny-blue); }
+        .top-vip-bar span i { color: var(--ny-amber); margin-right: 8px; }
+        .phone-link { color: #FFF; cursor: pointer; text-decoration: underline; transition: 0.3s; }
+        .phone-link:hover { color: var(--ny-blue); }
+
+        /* 3. LUXURY STICKY NAVIGATION */
+        header { background: rgba(255, 255, 255, 0.9); padding: 22px 6%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(241, 245, 249, 0.8); }
+        .logo-wrap { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { background: var(--ny-blue); color: white; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3); }
+        .logo-text { font-size: 1.4rem; color: var(--ny-dark); letter-spacing: -0.5px; text-transform: uppercase; font-weight: 700; }
+        .logo-text span { color: var(--ny-blue); }
+        
+        nav a { text-decoration: none; color: #475569; font-weight: 700; margin-right: 35px; font-size: 0.95rem; transition: 0.3s; position: relative; }
+        nav a:hover { color: var(--ny-blue); }
+        nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--ny-blue); transition: 0.3s; }
+        nav a:hover::after { width: 100%; }
+        
+        .nav-call-btn { background: var(--ny-dark); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; border: 1px solid #1E293B; }
+        .nav-call-btn:hover { background: var(--ny-blue); border-color: var(--ny-blue); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25); }
+
+        /* 4. SPLIT HERO LIGHTHOUSE LAYOUT */
+        .hero-luxury {
+            background: var(--gradient-primary);
+            padding: 80px 6% 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .hero-content { flex: 1 1 480px; color: white; min-width: 0; }
+        .hero-tag { background: rgba(2, 132, 199, 0.15); border: 1px solid rgba(2, 132, 199, 0.3); color: #38BDF8; padding: 6px 16px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 25px; }
+        .hero-content h1 { font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.1; font-weight: 700; margin-bottom: 25px; letter-spacing: -1px; }
+        .hero-content h1 span { color: var(--ny-blue); }
+        .hero-content p { font-size: clamp(1rem, 1.5vw, 1.2rem); color: #94A3B8; line-height: 1.7; margin-bottom: 40px; max-width: 600px; }
+        
+        .hero-action-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-prime { background: var(--ny-blue); color: white; padding: 16px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: 0.3s; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35); text-transform: uppercase; font-size: 0.9rem; white-space: nowrap; }
+        .btn-prime:hover { background: #0270a8; transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: white; padding: 16px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: 0.3s; border: 2px solid rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.9rem; white-space: nowrap; }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: white; transform: translateY(-2px); }
+
+        .hero-form-card {
+            flex: 1 1 380px;
+            max-width: 460px;
+            width: 100%;
+            background: #FFF;
+            padding: 36px;
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            border-top: 6px solid var(--ny-blue);
+            align-self: flex-start;
+            position: sticky;
+            top: 90px;
+        }
+        .hero-form-card h3 { font-size: 1.5rem; color: var(--ny-dark); margin-bottom: 8px; }
+        .hero-form-card p { font-size: 0.88rem; color: #64748B; margin-bottom: 22px; }
+
+        /* FORM COMPONENT DEFINITIONS */
+        .form-row { margin-bottom: 20px; }
+        .form-row label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.85rem; color: var(--ny-dark); }
+        .form-row input, .form-row select { width: 100%; padding: 14px; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 0.95rem; background: #F8FAFC; transition: 0.3s; }
+        .form-row input:focus, .form-row select:focus { outline: none; border-color: var(--ny-blue); background: #FFF; box-shadow: 0 0 10px rgba(2, 132, 199, 0.1); }
+        .form-submit-btn { width: 100%; background: var(--ny-dark); color: white; padding: 16px; border: none; font-weight: 700; border-radius: 8px; cursor: pointer; text-transform: uppercase; font-size: 1rem; transition: 0.3s; letter-spacing: 0.5px; }
+        .form-submit-btn:hover { background: var(--ny-blue); transform: translateY(-1px); }
+
+        /* FORM ERROR BOX */
+        .form-error-box { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 8px; padding: 12px 16px; margin-bottom: 18px; }
+        .form-error-box p { color: #DC2626; font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+        .form-error-box p:last-child { margin-bottom: 0; }
+
+        /* FORM SUCCESS STATE */
+        .form-success-state { text-align: center; padding: 10px 0; }
+        .success-icon { font-size: 3.5rem; color: #10B981; margin-bottom: 16px; }
+        .form-success-state h3 { font-size: 1.6rem; color: var(--ny-dark); margin-bottom: 12px; }
+        .form-success-state p { font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 8px; }
+        .form-reset-btn { display: block; width: 100%; margin-top: 14px; background: transparent; border: 2px solid #E2E8F0; color: #64748B; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: 0.3s; }
+        .form-reset-btn:hover { border-color: var(--ny-blue); color: var(--ny-blue); }
+
+        /* 5. HYPER-DETAILED SERVICES SECTION */
+        .detailed-services { padding: 120px 6%; background: var(--ny-light); }
+        .center-heading { text-align: center; max-width: 700px; margin: 0 auto 70px; }
+        .center-heading h2 { font-size: 2.8rem; color: var(--ny-dark); margin-bottom: 15px; letter-spacing: -0.5px; }
+        .center-heading p { color: #64748B; font-size: 1.1rem; line-height: 1.6; }
+        
+        .detailed-matrix { display: flex; flex-direction: column; gap: 40px; }
+        .matrix-row { background: white; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-sm); display: flex; gap: 50px; align-items: center; transition: 0.3s; border: 1px solid #F1F5F9; }
+        .matrix-row:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .matrix-media { flex: 1; height: 320px; border-radius: 12px; overflow: hidden; position: relative; }
+        .matrix-media img { width: 100%; height: 100%; object-fit: cover; }
+        .matrix-info { flex: 1.3; }
+        .matrix-info .badge { background: #E0F2FE; color: var(--ny-blue); padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 15px; }
+        .matrix-info h3 { font-size: 1.8rem; color: var(--ny-dark); margin-bottom: 15px; }
+        .matrix-info p { color: #475569; line-height: 1.7; font-size: 1rem; margin-bottom: 25px; }
+        
+        .bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .bullet-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: #334155; }
+        .bullet-item i { color: #10B981; font-size: 1.1rem; }
+
+        /* Alternate Row Layout for Premium Feel */
+        .matrix-row.reverse { flex-direction: row-reverse; }
+
+        /* 6. INTERACTIVE REVIEW & TESTIMONIAL SYSTEM */
+        .reviews-section { padding: 120px 6%; background: white; }
+        .review-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .review-card { background: var(--ny-light); border-radius: 16px; padding: 35px; border: 1px solid #E2E8F0; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        .stars-row { color: var(--ny-amber); font-size: 1.1rem; margin-bottom: 20px; }
+        .review-text { font-size: 1rem; line-height: 1.6; color: #475569; font-style: italic; margin-bottom: 25px; flex-grow: 1; }
+        .user-profile { display: flex; align-items: center; gap: 15px; }
+        .user-avatar { width: 50px; height: 50px; border-radius: 50%; background: #CBD5E1; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--ny-dark); border: 2px solid white; box-shadow: var(--shadow-sm); }
+        .user-meta h4 { font-size: 1rem; color: var(--ny-dark); margin-bottom: 2px; }
+        .user-meta span { font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; }
+        .verified-stamp { position: absolute; top: 35px; right: 35px; color: #10B981; font-size: 1.3rem; }
+
+        /* PHONE MODAL */
+        .phone-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; }
+        .phone-modal-box { background: white; border-radius: 20px; padding: 40px; text-align: center; max-width: 380px; width: 90%; box-shadow: 0 30px 60px rgba(0,0,0,0.3); border-top: 5px solid var(--ny-blue); }
+        .phone-modal-box .modal-icon { font-size: 3rem; color: var(--ny-blue); margin-bottom: 16px; }
+        .phone-modal-box h3 { font-size: 1.4rem; color: var(--ny-dark); margin-bottom: 8px; }
+        .phone-modal-box p { color: #64748B; font-size: 0.95rem; margin-bottom: 20px; }
+        .phone-modal-number { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ny-blue); display: block; margin-bottom: 24px; letter-spacing: 1px; }
+        .modal-close-btn { background: #F1F5F9; border: none; padding: 12px 28px; border-radius: 8px; font-weight: 700; cursor: pointer; color: #475569; font-size: 0.9rem; transition: 0.2s; }
+        .modal-close-btn:hover { background: #E2E8F0; }
+
+        /* 7. ORDERS TRACKER SECTION */
+        .orders-section { padding: 80px 6%; background: #F0F9FF; border-top: 3px solid var(--ny-blue); }
+        .orders-section .center-heading { margin-bottom: 40px; }
+        .orders-empty { text-align: center; padding: 60px 20px; color: #94A3B8; background: white; border-radius: 16px; border: 2px dashed #E2E8F0; }
+        .orders-empty i { font-size: 3.5rem; margin-bottom: 16px; display: block; color: #CBD5E1; }
+        .orders-empty p { font-size: 1rem; font-weight: 600; }
+
+        /* Orders Stats Bar */
+        .orders-stats-bar { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .ostat-card { flex: 1 1 160px; background: white; border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid var(--ny-blue); }
+        .ostat-card.green  { border-left-color: #10B981; }
+        .ostat-card.amber  { border-left-color: #F59E0B; }
+        .ostat-card.red    { border-left-color: #EF4444; }
+        .ostat-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; background: #EFF6FF; color: var(--ny-blue); flex-shrink: 0; }
+        .ostat-card.green .ostat-icon  { background: #D1FAE5; color: #10B981; }
+        .ostat-card.amber .ostat-icon  { background: #FEF3C7; color: #D97706; }
+        .ostat-card.red   .ostat-icon  { background: #FEE2E2; color: #EF4444; }
+        .ostat-info span { font-size: 0.78rem; color: #94A3B8; font-weight: 700; text-transform: uppercase; display: block; }
+        .ostat-info strong { font-size: 1.6rem; color: var(--ny-dark); font-family: 'Space Grotesk', sans-serif; }
+
+        /* Orders Table */
+        .order-table-wrap { overflow-x: auto; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .order-table { width: 100%; border-collapse: collapse; background: white; font-size: 0.93rem; min-width: 700px; }
+        .order-table thead { background: var(--ny-dark); color: white; }
+        .order-table thead th { padding: 16px 18px; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; }
+        .order-table tbody tr { border-bottom: 1px solid #F1F5F9; transition: background 0.2s; }
+        .order-table tbody tr:last-child { border-bottom: none; }
+        .order-table tbody tr:hover { background: #F8FAFC; }
+        .order-table td { padding: 15px 18px; color: #334155; vertical-align: middle; }
+        .order-id { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--ny-blue); font-size: 0.88rem; background: #EFF6FF; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+        .order-status { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; cursor: pointer; border: none; transition: 0.2s; }
+        .status-pending   { background: #FEF3C7; color: #D97706; }
+        .status-confirmed { background: #D1FAE5; color: #059669; }
+        .status-cancelled { background: #FEE2E2; color: #DC2626; }
+        .order-time { font-size: 0.8rem; color: #94A3B8; font-weight: 600; white-space: nowrap; }
+        .order-delete-btn { background: none; border: none; color: #CBD5E1; cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: 6px; transition: 0.2s; }
+        .order-delete-btn:hover { background: #FEE2E2; color: #EF4444; }
+        .orders-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+        .orders-search { padding: 10px 16px; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 0.9rem; width: 240px; background: white; }
+        .orders-search:focus { outline: none; border-color: var(--ny-blue); }
+        .orders-clear-btn { background: #FEE2E2; color: #DC2626; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: 0.2s; }
+        .orders-clear-btn:hover { background: #FECACA; }
+        .orders-count-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--ny-blue); color: white; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-left: 12px; vertical-align: middle; }
+
+        /* 8. EMERGENCY STICKY ROW */
+        .strip-banner { background: #000; padding: 60px 6%; text-align: center; color: white; position: relative; }
+        .strip-banner h2 { font-size: 2.3rem; margin-bottom: 15px; font-weight: 700; }
+        .strip-banner p { color: #94A3B8; font-size: 1.1rem; margin-bottom: 30px; }
+        .strip-phone-link { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; color: var(--ny-blue); text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .strip-phone-link:hover { color: var(--ny-amber); transform: scale(1.02); }
+
+        /* 8. LUXURY DESIGN FOOTER SYSTEM */
+        footer { background: var(--ny-dark); color: #64748B; padding: 90px 6% 30px; border-top: 1px solid #1E293B; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 60px; }
+        .footer-column h4 { color: white; font-size: 1.15rem; margin-bottom: 25px; position: relative; padding-bottom: 8px; }
+        .footer-column h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--ny-blue); }
+        .footer-column p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
+        .footer-column a { color: #64748B; text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.95rem; transition: 0.2s; }
+        .footer-column a:hover { color: white; padding-left: 5px; }
+        .footer-column i { color: var(--ny-blue); margin-right: 10px; width: 15px; }
+        
+        .footer-base { border-top: 1px solid #1E293B; padding-top: 30px; text-align: center; font-size: 0.9rem; color: #475569; }
+
+        /* RESPONSIVE MEDIA CONSTRAINTS */
+        @media (max-width: 1100px) {
+            .hero-luxury { gap: 40px; padding: 70px 6% 80px; }
+            .hero-form-card { position: static; max-width: 100%; }
+        }
+        @media (max-width: 860px) {
+            .hero-luxury { flex-direction: column; padding: 60px 6% 70px; align-items: stretch; }
+            .hero-content { text-align: center; }
+            .hero-action-buttons { justify-content: center; }
+            .hero-content p { margin-left: auto; margin-right: auto; }
+            .hero-form-card { max-width: 100%; position: static; }
+            .matrix-row, .matrix-row.reverse { flex-direction: column; padding: 30px; }
+            .matrix-media { width: 100%; height: 250px; }
+        }
+        @media (max-width: 640px) {
+            .hero-luxury { padding: 40px 5% 50px; gap: 30px; }
+            .hero-form-card { padding: 24px 20px; }
+            .bullet-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav { margin-bottom: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            nav a { margin-right: 0; }
+            .strip-phone-link { font-size: 1.8rem; }
+            .top-vip-bar { flex-direction: column; gap: 6px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PHONE MODAL -->
+    <div class="phone-modal-overlay" id="phoneModal" onclick="if(event.target===this) this.style.display='none'">
+        <div class="phone-modal-box">
+            <div class="modal-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <h3>Call Us Now</h3>
+            <p>Our Broadway dispatch team is available 24/7. Dial the number below:</p>
+            <span class="phone-modal-number">(212) 684-7494</span>
+            <button class="modal-close-btn" onclick="document.getElementById('phoneModal').style.display='none'">Close</button>
+        </div>
+    </div>
+
+    <!-- 2. TOP VIP INFO BAR -->
+    <div class="top-vip-bar">
+        <span><i class="fa-solid fa-map-pin"></i> 452 Broadway, New York, NY 10013</span>
+        <div class="social-links">
+            <a href="https://www.facebook.com/thomasbrothersnypipes" target="_blank" class="social-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/thomasbrothersnypipes" target="_blank" class="social-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.yelp.com/biz/thomas-brothers-pipeworks-new-york" target="_blank" class="social-yelp" title="Yelp"><i class="fa-brands fa-yelp"></i></a>
+            <a href="https://g.page/thomas-brothers-pipeworks-ny" target="_blank" class="social-goog" title="Google Business"><i class="fa-brands fa-google"></i></a>
+            <a href="https://www.linkedin.com/company/thomas-brothers-pipeworks" target="_blank" class="social-li" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <span><i class="fa-solid fa-clock"></i> 24HR Rapid Response Line: <span class="phone-link" onclick="dialPhone()">(212) 684-7494</span></span>
+    </div>
+
+    <!-- 3. NAVIGATION HEADER -->
+    <header>
+        <div class="logo-wrap">
+            <div class="logo-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div class="logo-text">Thomas Brothers<span> Pipeworks</span></div>
+        </div>
+        <nav>
+            <a href="#services-block">Our Services</a>
+            <a href="#reviews-block">Client Reviews</a>
+            <a href="#orders-block">Orders</a>
+            <a href="#contact-block">Book Engineer</a>
+        </nav>
+        <button onclick="dialPhone()" class="nav-call-btn"><i class="fa-solid fa-phone"></i> Direct Line</button>
+    </header>
+
+    <!-- 4. HERO LUXURY LAYOUT -->
+    <section class="hero-luxury">
+        <div class="hero-content">
+            <div class="hero-tag"><i class="fa-solid fa-shield"></i> Manhattan Licensed Mechanical Engineers</div>
+            <h1>Premium Plumbing & Infrastructure <span>Solutions</span></h1>
+            <p>From heavy-duty skyscraper commercial lines to precise residential renovations, Thomas Brothers Pipeworks sets the gold standard for luxury emergency craftsmanship in New York City.</p>
+            <div class="hero-action-buttons">
+                <button onclick="dialPhone()" class="btn-prime"><i class="fa-solid fa-bolt"></i> Emergency Dispatch</button>
+                <a href="#services-block" class="btn-outline">Explore Matrix</a>
+            </div>
+        </div>
+        
+        <div class="hero-form-card" id="contact-block">
+            <h3>Secure Appointment</h3>
+            <p>Our average dispatch response time across Broadway is under 30 minutes.</p>
+            <form id="nyDispatchForm">
+                <div class="form-row">
+                    <label>Full Name / Business Name *</label>
+                    <input type="text" id="formName" required placeholder="Alexander Wright">
+                </div>
+                <div class="form-row">
+                    <label>Contact Phone Number *</label>
+                    <input type="tel" id="formPhone" required placeholder="(212) 684-7494">
+                </div>
+                <div class="form-row">
+                    <label>Email Address (Optional)</label>
+                    <input type="email" id="formEmail" placeholder="you@example.com">
+                </div>
+                <div class="form-row">
+                    <label>Service Domain Required *</label>
+                    <select id="formService">
+                        <option value="Commercial High-Rise Pipeline Operations">🏢 Commercial High-Rise Pipeline Operations</option>
+                        <option value="Live Burst Pipe Emergency">🚨 Live Burst Pipe Emergency</option>
+                        <option value="Advanced Sewer Cleanout & Jetting">💧 Advanced Sewer Cleanout & Jetting</option>
+                        <option value="Premium Boiler & Heater Engineering">🔥 Premium Boiler & Heater Engineering</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-submit-btn">Initialize Dispatch Protocol</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 5. HYPER-DETAILED SERVICES SECTION -->
+    <section class="detailed-services" id="services-block">
+        <div class="center-heading">
+            <h2>High-Tier Plumbing Specializations</h2>
+            <p>We combine advanced master plumbing certifications with state-of-the-art diagnostic machinery to handle complex metropolitan structural demands.</p>
+        </div>
+        
+        <div class="detailed-matrix">
+            <!-- Detailed Service Card 1 -->
+            <div class="matrix-row">
+                <div class="matrix-media">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Emergency Plumbing">
+                </div>
+                <div class="matrix-info">
+                    <div class="badge">Immediate Deployment</div>
+                    <h3>24/7/365 Emergency Critical Repairs</h3>
+                    <p>When high-pressure water lines fail, catastrophic structural damages happen in seconds. Our rapid response trucks carry advanced pneumatic leak seals, commercial shutoff keys, and heavy pumping rigs to stabilize your property instantly.</p>
+                    <div class="bullet-grid">
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Burst Main-Line Containment</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> High-Volume Water Extraction</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Structural Valve Re-engineering</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Real-time Zone Isolation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Service Card 2 (Reverse Layout) -->
+            <div class="matrix-row reverse">
+                <div class="matrix-media">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Drain Cleaning">
+                </div>
+                <div class="matrix-info">
+                    <div class="badge">Advanced Engineering</div>
+                    <h3>High-Pressure Hydro-Jetting & Sewer Clearing</h3>
+                    <p>Standard snaking simply pokes holes in blockages. Our computerized hydro-jetting systems clean lines completely using multi-angle water pressure streams up to 4,000 PSI, scraping organic sediment, calcified scale, and tree roots clean out of the system layout.</p>
+                    <div class="bullet-grid">
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Digital HD Fiberoptic Pipe Scans</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Industrial Grease Interceptor Scouring</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Deep Root Intrusion Vaporization</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Mainline Scale Descaling</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Service Card 3 -->
+            <div class="matrix-row">
+                <div class="matrix-media">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80" alt="Water Heaters">
+                </div>
+                <div class="matrix-info">
+                    <div class="badge">Thermal Systems</div>
+                    <h3>Intelligent Boiler & Tankless Water Optimization</h3>
+                    <p>Ensure seamless constant hot water supply with our premium energy-star compliant setups. We service, calibrate, and install high-output modern tankless matrices and heavy commercial storage boilers without disrupting your property layout flow.</p>
+                    <div class="bullet-grid">
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> High-Efficiency Tankless Upgrades</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Multi-Zone Thermal Calibration</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Digital Pressure-Valve Overhauls</div>
+                        <div class="bullet-item"><i class="fa-solid fa-circle-check"></i> Emergency Heating Element Fixes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. INTERACTIVE REVIEW & TESTIMONIAL SYSTEM -->
+    <section class="reviews-section" id="reviews-block">
+        <div class="center-heading">
+            <h2>Verified Customer Experiences</h2>
+            <p>See why residential property managers and enterprise business accounts on Broadway rank Thomas Brothers Pipeworks with 5 stars consistently.</p>
+        </div>
+        
+        <div class="review-stats-grid">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+                <div class="verified-stamp"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Our commercial kitchen line on Broadway backed up during peak friday dinner service. Thomas Brothers arrived within 25 minutes, used their hydro-jet system, and completely resolved it without us having to close down operations. Lifesavers!"</p>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar">MR</div>
+                    <div class="user-meta">
+                        <h4>Marcus Vance</h4>
+                        <span>Restaurant General Manager</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+                <div class="verified-stamp"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Outstanding professionalism! They replaced our outdated building boiler system with a modern high-efficiency setup. No surprise fees, extremely clean paperwork, and upfront transparent mechanics. Strongly recommended."</p>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar">EL</div>
+                    <div class="user-meta">
+                        <h4>Eleanor Sterling</h4>
+                        <span>Manhattan Property Investor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+                <div class="verified-stamp"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"A severe pipe burst in my basement wall at 2:00 AM. Their live dispatch picked up on the first ring, and the mechanic arrived equipped to finish the structural weld within the hour. Incredible emergency response speed!"</p>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar">DK</div>
+                    <div class="user-meta">
+                        <h4>David K.</h4>
+                        <span>Broadway Homeowner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. ORDERS TRACKER SECTION -->
+    <section class="orders-section" id="orders-block">
+        <div class="center-heading">
+            <h2>Booking Orders <span id="ordersCountBadge"></span></h2>
+            <p>All submitted service requests are tracked here in real-time.</p>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="orders-stats-bar">
+            <div class="ostat-card">
+                <div class="ostat-icon"><i class="fa-solid fa-list-check"></i></div>
+                <div class="ostat-info"><span>Total Orders</span><strong id="statTotal">0</strong></div>
+            </div>
+            <div class="ostat-card amber">
+                <div class="ostat-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="ostat-info"><span>Pending</span><strong id="statPending">0</strong></div>
+            </div>
+            <div class="ostat-card green">
+                <div class="ostat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="ostat-info"><span>Confirmed</span><strong id="statConfirmed">0</strong></div>
+            </div>
+            <div class="ostat-card red">
+                <div class="ostat-icon"><i class="fa-solid fa-xmark"></i></div>
+                <div class="ostat-info"><span>Cancelled</span><strong id="statCancelled">0</strong></div>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="orders-toolbar" id="ordersToolbar" style="display:none;">
+            <input type="text" class="orders-search" id="ordersSearch" placeholder="🔍  Search by name or service...">
+            <button class="orders-clear-btn" onclick="clearAllOrders()"><i class="fa-solid fa-trash"></i> Clear All Orders</button>
+        </div>
+
+        <!-- Empty State -->
+        <div class="orders-empty" id="ordersEmpty">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <p>No orders yet. Submit a booking request above to see it here.</p>
+        </div>
+
+        <!-- Table -->
+        <div class="order-table-wrap" id="ordersTableWrap" style="display:none;">
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Client Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTableBody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 8. EMERGENCY STICKY ROW -->
+    <section class="strip-banner">
+        <h2>Need Immediate Mechanical Support?</h2>
+        <p>Our heavy deployment response units are fully prepped and routed across New York zones continuously.</p>
+        <button onclick="dialPhone()" class="strip-phone-link"><i class="fa-solid fa-phone-volume"></i> (212) 684-7494</button>
+    </section>
+
+    <!-- 8. LUXURY DESIGN FOOTER SYSTEM -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4 style="color: white;">Thomas Brothers</h4>
+                <p>Delivering state-of-the-art corporate and premium residential mechanical infrastructure engineering solutions throughout New York City with absolute precision.</p>
+                <div class="social-links" style="margin-top:10px;">
+                    <a href="https://www.facebook.com/thomasbrothersnypipes" target="_blank" class="social-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/thomasbrothersnypipes" target="_blank" class="social-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.yelp.com/biz/thomas-brothers-pipeworks-new-york" target="_blank" class="social-yelp" title="Yelp"><i class="fa-brands fa-yelp"></i></a>
+                    <a href="https://g.page/thomas-brothers-pipeworks-ny" target="_blank" class="social-goog" title="Google Business"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://www.linkedin.com/company/thomas-brothers-pipeworks" target="_blank" class="social-li" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>System Links</h4>
+                <a href="#services-block">Hyper-Detailed Services</a>
+                <a href="#reviews-block">Verified Client Reviews</a>
+                <a href="#contact-block">Book Master Plumber</a>
+            </div>
+            <div class="footer-column">
+                <h4>HQ Coordinates</h4>
+                <p><i class="fa-solid fa-map"></i> 452 Broadway, New York, NY 10013</p>
+                <p><i class="fa-solid fa-phone"></i> <span class="phone-link" onclick="dialPhone()" style="color:#FFF; cursor:pointer;">(212) 684-7494</span></p>
+            </div>
+        </div>
+        <div class="footer-base">
+            <p>&copy; 2026 Thomas Brothers Pipeworks. Engineered Masterfully. All Structural Rights Reserved. New York, NY.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC CORE -->
+    <script>
+        // Phone dial handler - no browser popup
+        function dialPhone() {
+            const isMobile = /Android|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location.href = "tel:+12126847494";
+            } else {
+                // Desktop: show a clean modal instead of browser popup
+                const modal = document.getElementById("phoneModal");
+                modal.style.display = "flex";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // 1. Smooth Section Page Scroller Engine
+            document.querySelectorAll('nav a, .hero-action-buttons a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const destinationTarget = this.getAttribute('href');
+                    if(destinationTarget.startsWith('#')) {
+                        e.preventDefault();
+                        const matchingElement = document.querySelector(destinationTarget);
+                        if(matchingElement) {
+                            matchingElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            // 2. Workable CRM Form with Inline Success Message
+            const submissionForm = document.getElementById("nyDispatchForm");
+            const formCard = document.querySelector(".hero-form-card");
+
+            submissionForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const clientName    = document.getElementById("formName").value.trim();
+                const clientPhone   = document.getElementById("formPhone").value.trim();
+                const clientEmail   = document.getElementById("formEmail").value.trim();
+                const selectedService = document.getElementById("formService").value;
+
+                // --- Validation ---
+                let errors = [];
+
+                if(clientName.length < 2) {
+                    errors.push("Please enter your full name.");
+                }
+
+                const phoneDigits = clientPhone.replace(/\D/g, "");
+                if(phoneDigits.length < 10) {
+                    errors.push("Please enter a valid 10-digit phone number.");
+                }
+
+                if(clientEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clientEmail)) {
+                    errors.push("Please enter a valid email address.");
+                }
+
+                // Show inline errors if any
+                const existingError = formCard.querySelector(".form-error-box");
+                if(existingError) existingError.remove();
+
+                if(errors.length > 0) {
+                    const errorBox = document.createElement("div");
+                    errorBox.className = "form-error-box";
+                    errorBox.innerHTML = errors.map(e => `<p>⚠️ ${e}</p>`).join("");
+                    submissionForm.insertBefore(errorBox, submissionForm.firstChild);
+                    return;
+                }
+
+                // --- Success State ---
+                formCard.innerHTML = `
+                    <div class="form-success-state">
+                        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h3>Dispatch Confirmed!</h3>
+                        <p>Thank you, <strong>${clientName}</strong>. Your request for <strong>${selectedService}</strong> has been received.</p>
+                        <p>Our engineer will call you at <strong>${clientPhone}</strong> within <strong>10 minutes</strong>.</p>
+                        <button onclick="dialPhone()" class="btn-prime" style="display:inline-block; margin-top:20px; text-align:center; border:none; cursor:pointer;">
+                            <i class="fa-solid fa-phone"></i> Call Us Now: (212) 684-7494
+                        </button>
+                        <button onclick="location.reload()" class="form-reset-btn">Book Another Service</button>
+                    </div>
+                `;
+
+                // --- Add to Orders Table ---
+                const ordersEmpty    = document.getElementById("ordersEmpty");
+                const ordersTableWrap = document.getElementById("ordersTableWrap");
+                const ordersTableBody = document.getElementById("ordersTableBody");
+                const ordersCountBadge = document.getElementById("ordersCountBadge");
+
+                ordersEmpty.style.display = "none";
+                ordersTableWrap.style.display = "block";
+
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + " — " + now.toLocaleDateString();
+                const orderNum = "TBP-" + String(ordersTableBody.rows.length + 1).padStart(3, "0");
+
+                const row = ordersTableBody.insertRow(0);
+                row.innerHTML = `
+                    <td><span class="order-id">${orderNum}</span></td>
+                    <td><strong>${clientName}</strong></td>
+                    <td>${clientPhone}</td>
+                    <td>${clientEmail || "<span style='color:#CBD5E1'>—</span>"}</td>
+                    <td>${selectedService}</td>
+                    <td><span class="order-status status-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                    <td><span class="order-time">${timeStr}</span></td>
+                `;
+
+                // Update badge count
+                const totalOrders = ordersTableBody.rows.length;
+                ordersCountBadge.innerHTML = `<span class="orders-count-badge"><i class="fa-solid fa-list-check"></i> ${totalOrders} Order${totalOrders > 1 ? "s" : ""}</span>`;
+
+                // Scroll to orders section
+                setTimeout(() => {
+                    document.getElementById("orders-block").scrollIntoView({ behavior: "smooth" });
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>
+
